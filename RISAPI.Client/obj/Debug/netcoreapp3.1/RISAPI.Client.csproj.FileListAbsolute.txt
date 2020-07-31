@@ -1,0 +1,9 @@
+C:\src\pipeline\src\RISAPI.Client\bin\Debug\netcoreapp3.1\RISAPI.Client.deps.json
+C:\src\pipeline\src\RISAPI.Client\bin\Debug\netcoreapp3.1\RISAPI.Client.dll
+C:\src\pipeline\src\RISAPI.Client\bin\Debug\netcoreapp3.1\RISAPI.Client.pdb
+C:\src\pipeline\src\RISAPI.Client\obj\Debug\netcoreapp3.1\RISAPI.Client.csprojAssemblyReference.cache
+C:\src\pipeline\src\RISAPI.Client\obj\Debug\netcoreapp3.1\RISAPI.Client.csproj.CoreCompileInputs.cache
+C:\src\pipeline\src\RISAPI.Client\obj\Debug\netcoreapp3.1\RISAPI.Client.AssemblyInfoInputs.cache
+C:\src\pipeline\src\RISAPI.Client\obj\Debug\netcoreapp3.1\RISAPI.Client.AssemblyInfo.cs
+C:\src\pipeline\src\RISAPI.Client\obj\Debug\netcoreapp3.1\RISAPI.Client.dll
+C:\src\pipeline\src\RISAPI.Client\obj\Debug\netcoreapp3.1\RISAPI.Client.pdb

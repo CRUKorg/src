@@ -1,0 +1,15 @@
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPIServerless.deps.json
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPIServerless.runtimeconfig.json
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPIServerless.runtimeconfig.dev.json
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPIServerless.dll
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPI.BLL.dll
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPI.Client.dll
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPI.Database.dll
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPI.BLL.pdb
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPI.Client.pdb
+C:\src\pipeline\src\RISAPIServerless\bin\Debug\netcoreapp3.1\RISAPI.Database.pdb
+C:\src\pipeline\src\RISAPIServerless\obj\Debug\netcoreapp3.1\RISAPIServerless.csprojAssemblyReference.cache
+C:\src\pipeline\src\RISAPIServerless\obj\Debug\netcoreapp3.1\RISAPIServerless.AssemblyInfoInputs.cache
+C:\src\pipeline\src\RISAPIServerless\obj\Debug\netcoreapp3.1\RISAPIServerless.AssemblyInfo.cs
+C:\src\pipeline\src\RISAPIServerless\obj\Debug\netcoreapp3.1\RISAPIServerless.csproj.CopyComplete
+C:\src\pipeline\src\RISAPIServerless\obj\Debug\netcoreapp3.1\RISAPIServerless.genruntimeconfig.cache

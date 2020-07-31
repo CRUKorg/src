@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.CDK" Version="1.54.0" />
+    <PackageReference Include="Amazon.CDK.AWS.CodeBuild" Version="1.54.0" />
+    <PackageReference Include="Amazon.CDK.AWS.CodeCommit" Version="1.54.0" />
+    <PackageReference Include="Amazon.CDK.AWS.CodePipeline" Version="1.54.0" />
+    <PackageReference Include="Amazon.CDK.AWS.CodePipeline.Actions" Version="1.54.0" />
+    <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.54.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Lambda\" />
+    <Folder Include="RISAPI\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RISAPI.Serverless\RISAPI.Serverless.csproj" />
+  </ItemGroup>
+
+</Project>
