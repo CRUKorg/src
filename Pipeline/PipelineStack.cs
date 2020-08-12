@@ -32,8 +32,8 @@ namespace Pipeline
                 Repo = "tdfr-poc-api",
                 OauthToken = SecretValue.PlainText("tdfr-github-token"),                
                 Output = sourceOutput,
-                Branch = "master",
-                Trigger = GitHubTrigger.WEBHOOK
+                Branch = "master"
+                
             }) ;
 
             var deploymentPipelineArtifactBucket = new Bucket(this, "pipelineArtifactBucket",new BucketProps {
