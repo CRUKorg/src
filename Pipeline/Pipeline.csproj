@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -12,15 +12,13 @@
     <PackageReference Include="Amazon.CDK.AWS.CodePipeline" Version="1.54.0" />
     <PackageReference Include="Amazon.CDK.AWS.CodePipeline.Actions" Version="1.54.0" />
     <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.54.0" />
+    <PackageReference Include="Amazon.CDK.AWS.SecretsManager" Version="1.54.0" />
+    <PackageReference Include="AWSSDK.SecretsManager" Version="3.3.103.14" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Lambda\" />
     <Folder Include="RISAPI\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\RISAPI.Serverless\RISAPI.Serverless.csproj" />
   </ItemGroup>
 
 </Project>

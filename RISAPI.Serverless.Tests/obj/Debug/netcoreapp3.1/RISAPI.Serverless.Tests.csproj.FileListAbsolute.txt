@@ -1,4 +1,0 @@
-C:\src\pipeline\src\RISAPI.Serverless.Tests\obj\Debug\netcoreapp3.1\RISAPI.Serverless.Tests.csprojAssemblyReference.cache
-C:\src\pipeline\src\RISAPI.Serverless.Tests\obj\Debug\netcoreapp3.1\RISAPI.Serverless.Tests.csproj.CoreCompileInputs.cache
-C:\src\pipeline\src\RISAPI.Serverless.Tests\obj\Debug\netcoreapp3.1\RISAPI.Serverless.Tests.AssemblyInfoInputs.cache
-C:\src\pipeline\src\RISAPI.Serverless.Tests\obj\Debug\netcoreapp3.1\RISAPI.Serverless.Tests.AssemblyInfo.cs
