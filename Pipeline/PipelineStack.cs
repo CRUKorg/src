@@ -62,7 +62,7 @@ namespace Pipeline
                                 ["commands"] = new string[]
                                 {
                                     "ls",
-                                    "cd..",
+                                    "cd ./Pipeline",
                                     "ls",
                                     "npx cdk synth -o ./cdk.out"
                                 }
