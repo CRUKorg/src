@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\pipeline\\src\\Pipeline\\Pipeline.csproj": {}
+    "C:\\src\\pipeline\\Pipeline\\Pipeline.csproj": {}
   },
   "projects": {
-    "C:\\src\\pipeline\\src\\Pipeline\\Pipeline.csproj": {
+    "C:\\src\\pipeline\\Pipeline\\Pipeline.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\pipeline\\src\\Pipeline\\Pipeline.csproj",
+        "projectUniqueName": "C:\\src\\pipeline\\Pipeline\\Pipeline.csproj",
         "projectName": "Pipeline",
-        "projectPath": "C:\\src\\pipeline\\src\\Pipeline\\Pipeline.csproj",
+        "projectPath": "C:\\src\\pipeline\\Pipeline\\Pipeline.csproj",
         "packagesPath": "C:\\Users\\bihani01\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\pipeline\\src\\Pipeline\\obj\\",
+        "outputPath": "C:\\src\\pipeline\\Pipeline\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
