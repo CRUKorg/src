@@ -22,14 +22,14 @@ namespace Pipeline
                 ObjectKeyParam = new Amazon.CDK.CfnParameter(this, "ObjectKey", new CfnParameterProps {Default= "TDFRPOCRISLambda/Get-CodeUri-637323964004593538-637323964234356273.zip" })
 
             });
-                        
+
             var vpc = Vpc.FromLookup(this, "VPC", new VpcLookupOptions
-            {                 
-                IsDefault= false,
-                VpcName= "tdfrpoc-vpc"
-            });       
-        
-            var importedSecurityGroup = SecurityGroup.FromSecurityGroupId(this, "securityGroup", "sg-0b8a803012ced8eff", new SecurityGroupImportOptions {Mutable= false}) ;
+            {
+                IsDefault = false,
+                VpcName = "tdfrpoc-vpc"
+            });
+
+            //var importedSecurityGroup = SecurityGroup.FromSecurityGroupId(this, "securityGroup", "sg-0b8a803012ced8eff", new SecurityGroupImportOptions {Mutable= false}) ;
 
             //var subnetList = new IVpcSubnet[] { new VpcSubnet { SubnetId = pubSubNets.Subnets.GetValue(0).ToString() }, new VpcSubnet { SubnetId = pubSubNets.Subnets.GetValue(1).ToString() } };
             new CfnOutput(this, "publicsubnet1", new CfnOutputProps
@@ -42,14 +42,14 @@ namespace Pipeline
             }); ;
             new CfnOutput(this, "VPCOut", new CfnOutputProps
             {
-                Value = importedSecurityGroup.SecurityGroupId
+                Value = vpc.VpcId
             }); ;
             new CfnOutput(this, "importedSecurityGroupOut", new CfnOutputProps
             {
                 Value = vpc.VpcId
             });
-           
-            ISecurityGroup[] funcSecurityGroups = new ISecurityGroup[] { importedSecurityGroup};
+
+
             SubnetSelection funcSubnetSelection = new SubnetSelection {                       
               Subnets= vpc.PublicSubnets
             };

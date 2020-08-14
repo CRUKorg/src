@@ -16,9 +16,4 @@
     <PackageReference Include="AWSSDK.SecretsManager" Version="3.3.103.14" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Lambda\" />
-    <Folder Include="RISAPI\" />
-  </ItemGroup>
-
 </Project>

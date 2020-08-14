@@ -1,8 +1,10 @@
 using Amazon.CDK;
+using Amazon.CDK.AWS.CloudFormation;
 using Amazon.CDK.AWS.CodeBuild;
 using Amazon.CDK.AWS.CodeCommit;
 using Amazon.CDK.AWS.CodePipeline;
 using Amazon.CDK.AWS.CodePipeline.Actions;
+using Amazon.CDK.AWS.ECS;
 using Amazon.CDK.AWS.Events.Targets;
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.Lambda;
@@ -18,7 +20,8 @@ namespace Pipeline
     }
 
     public class PipelineStack : Stack
-    {        
+    {
+        [System.Obsolete]
         public PipelineStack(Construct scope, string id, PipelineStackProps props = null) :
             base(scope, id, props)
         {      
@@ -29,11 +32,11 @@ namespace Pipeline
             {
                 ActionName = "GitHub_Source",
                 Owner = "CRUKorg",
-                Repo = "tdfr-poc-api",
-                OauthToken = SecretValue.PlainText("tdfr-github-token"),                
+                Repo = "src",
+                OauthToken = SecretValue.SecretsManager("arn:aws:secretsmanager:eu-west-1:026188114773:secret:poc/tdfrsecret-0eytiB"),                
                 Output = sourceOutput,
-                Branch = "master"
-                
+                Branch = "master",
+                Trigger = GitHubTrigger.WEBHOOK
             }) ;
 
             var deploymentPipelineArtifactBucket = new Bucket(this, "pipelineArtifactBucket",new BucketProps {
@@ -56,12 +59,18 @@ namespace Pipeline
                             },
                             ["build"] = new Dictionary<string, object>
                             {
-                                ["commands"] = "npx cdk synth -o ./pipeline/cdk.out"
+                                ["commands"] = new string[]
+                                {
+                                    "ls",
+                                    "cd..",
+                                    "ls",
+                                    "npx cdk synth -o ./cdk.out"
+                                }
                             }
                         },
                         ["artifacts"] = new Dictionary<string, object>
                         {
-                            ["base-directory"] = "./pipeline/cdk.out",
+                            ["base-directory"] = "./cdk.out",
                             ["files"] = new string[]
                         {
                             "LambdaStack.template.json"
@@ -146,6 +155,8 @@ namespace Pipeline
                             })
                         }
             };
+            var tests =  new CfnCapabilities[] { CfnCapabilities.NAMED_IAM   };
+           
             var pipelineStageDeployProp = new Amazon.CDK.AWS.CodePipeline.StageProps
             {
                 StageName = "Deploy",
@@ -155,11 +166,16 @@ namespace Pipeline
                                 ActionName = "Lambda_CFN_Deploy",
                                 TemplatePath = cdkBuildOutput.AtPath("LambdaStack.template.json"),
                                 StackName = "LambdaDeploymentStack",
-                                AdminPermissions = true
+                                AdminPermissions = true,                                
+                                Capabilities= new CloudFormationCapabilities[]{CloudFormationCapabilities.ANONYMOUS_IAM,CloudFormationCapabilities.NAMED_IAM },
+                                RunOrder=1,                             
+                                 
+                                
                                 //ParameterOverrides = props.LambdaCode.Assign(lambdaBuildOutput.S3Location),
                                 //ExtraInputs = new [] { lambdaBuildOutput }
                             })
                         }
+               
             };
            
             var pipelineprop = new PipelineProps
@@ -175,7 +191,7 @@ namespace Pipeline
                         {
                            sourceAction
                         }
-                    },pipelineStageBuildProp,pipelineStageDeployProp
+                    },pipelineStageBuildProp,pipelineStageDeployProp 
                 }
             };
             var deploymentPipeline = new Amazon.CDK.AWS.CodePipeline.Pipeline(this, "deploymentPipeline", pipelineprop);
